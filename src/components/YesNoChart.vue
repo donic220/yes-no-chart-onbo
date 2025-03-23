@@ -12,6 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed, defineAsyncComponent } from "vue";
+import { useRouter } from 'vue-router';
 import QuestionNode from "./QuestionNode.vue";
 
 const QUESTIONS = {
@@ -36,12 +37,12 @@ const QUESTIONS = {
 const RESULTS: { [key: string]: () => Promise<typeof import("*.vue")> } = {
   R1: () => import("./results/Result1.vue"),
   R2: () => import("./results/Result2.vue"),
-  R3: () => import("./results/Result1.vue"),
-  R4: () => import("./results/Result1.vue"),
-  R5: () => import("./results/Result1.vue"),
-  R6: () => import("./results/Result1.vue"),
-  R7: () => import("./results/Result1.vue"),
-  R8: () => import("./results/Result1.vue"),
+  R3: () => import("./results/Result3.vue"),
+  R4: () => import("./results/Result4.vue"),
+  R5: () => import("./results/Result5.vue"),
+  R6: () => import("./results/Result6.vue"),
+  R7: () => import("./results/Result7.vue"),
+  R8: () => import("./results/Result8.vue"),
 };
 
 interface Chart {
@@ -80,6 +81,7 @@ export default defineComponent({
   setup() {
     const currentNode = ref<Node | null>(chart.Q1);
     const currentResult = ref<string>("");
+    const router = useRouter();
 
     const getNode = (key: string | Node): Node => {
       if (typeof key === "string") {
@@ -95,6 +97,8 @@ export default defineComponent({
           currentNode.value = getNode(nextNode);
           if (typeof nextNode === "string" && nextNode.startsWith("R")) {
             currentResult.value = nextNode;
+            // 結果ページに遷移する
+            router.push(`/results/${nextNode.substring(1)}`);
           }
         }
       }

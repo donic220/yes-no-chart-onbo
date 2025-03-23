@@ -1,11 +1,11 @@
 <template>
   <div class="result">
-    <h1 class="result-title">OJTという名の現場任せ組織</h1>
+    <h1 class="result-title">理想のしなやかな組織</h1>
     <div class="result-content">
       <div class="image-section">
         <img
-          src="@/images/results/r2.png"
-          alt="OJTという名の現場任せ組織"
+          src="@/images/results/r5.png"
+          alt="理想のしなやかな組織"
           class="result-image"
         />
         <div class="ratings-container">
@@ -15,37 +15,38 @@
               <span class="rating-label">ウェルカム</span>
               <div class="stars">
                 <span class="star filled">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
+                <!-- <span class="star half">★</span> -->
+                <!-- <span class="star">★</span> -->
               </div>
             </div>
             <div class="rating-item">
               <span class="rating-label">早期戦力化</span>
               <div class="stars">
                 <span class="star filled">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
+                <!-- <span class="star partial" style="--fill-percent: 66%">★</span> -->
+                <!-- <span class="star half">★</span> -->
+                <!-- <span class="star">★</span> -->
               </div>
             </div>
             <div class="rating-item">
               <span class="rating-label">エンゲージメント</span>
               <div class="stars">
                 <span class="star filled">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
               </div>
             </div>
           </div>
-          <div class="points">0.5/3 points</div>
+          <div class="points">3/3 points</div>
         </div>
       </div>
       <div class="description-section">
         <p class="result-description">
-          甲南大学の尾形教授による中小企業オンボーディング実態調査では、「OJTを中心とした現場での指導を実施している」と回答した企業が最も多く、次に多かったのが「特に何もしていない」の回答。「現場での指導」は、「現場に丸投げ」を意味しており、組織として何の施策も講じていないと捉えることができる。<br />
-          OJTといえばそれらしく聞こえるが、実態が変わらないと若手の流出は防げない。目の前の若手社員は社内の同僚と競争しているのではなく、学生時代の同期の成長をSNSを通じて見ているのだ。真摯に組織やオンボーディングづくりに向き合うときが来たのかもしれない。
+          息を吸うように組織で成果を出そうとする企業。オンボーディングという言葉が浸透する前から、新入社員フォローに取り組んでいる状態。
+          社員一人ひとりが自律しており、キャリアビジョンも持っているが、この組織が好きだから働いているという社員が多い。最近の研究でもキャリア自律している社員の方がその組織で働く満足度が高いという結果も出ている。
+          各施策の点と点をつなぎオンボーディングとしての成果を最大化しましょう。
+          さらなる飛躍につなげるために、工数削減と効果測定に取り組むと尚良いでしょう。
         </p>
         <div class="result-button-container">
-          <button class="result-button">オンボーディング<br>をはじめる</button>
+          <button class="result-button">Omboで取り組む</button>
         </div>
       </div>
     </div>
@@ -54,7 +55,7 @@
 
 <script>
 export default {
-  name: "ResultR1",
+  name: "ResultR5",
   data: () => ({
     satisfaction: 3,
   }),
@@ -127,31 +128,36 @@ export default {
   border-radius: 8px;
   text-align: center;
   margin-top: 10px;
+  width: 100%; /* 幅を100%に設定 */
+  max-width: 500px; /* 最大幅を設定 */
 }
 
 .ratings-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #fff;
   margin-bottom: 15px;
 }
 
 .rating-groups {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* space-aroundからspace-betweenに変更 */
   margin-bottom: 15px;
-  padding-left: 40px;
+  width: 100%; /* 幅を100%に設定 */
 }
 
 .rating-item {
   text-align: center;
-  padding: 0 15px;
+  width: 33.33%;
+  box-sizing: border-box;
 }
 
 .rating-label {
   display: block;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #fff;
   margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .stars {
@@ -167,6 +173,32 @@ export default {
 
 .star.filled {
   color: #ffcc00;
+}
+
+.star.half {
+  position: relative;
+  display: inline-block;
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  color: #ffcc00;
+  width: 50%;
+  overflow: hidden;
+}
+
+.star.partial {
+  position: relative;
+  display: inline-block;
+}
+
+.star.partial::before {
+  content: "★";
+  position: absolute;
+  color: #ffcc00;
+  width: var(--fill-percent, 50%);
+  overflow: hidden;
 }
 
 .points {
@@ -227,6 +259,10 @@ export default {
   .rating-groups {
     flex-direction: column;
     gap: 15px;
+  }
+  .rating-item {
+    width: 100%; /* モバイル表示では幅100% */
+    margin-bottom: 10px;
   }
   .satisfaction-rating {
     width: 90%;

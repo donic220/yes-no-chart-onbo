@@ -1,11 +1,11 @@
 <template>
   <div class="result">
-    <h1 class="result-title">OJTという名の現場任せ組織</h1>
+    <h1 class="result-title">潜在リスクを抱えた縦割り組織</h1>
     <div class="result-content">
       <div class="image-section">
         <img
-          src="@/images/results/r2.png"
-          alt="OJTという名の現場任せ組織"
+          src="@/images/results/r6.png"
+          alt="潜在リスクを抱えた縦割り組織"
           class="result-image"
         />
         <div class="ratings-container">
@@ -24,25 +24,26 @@
               <div class="stars">
                 <span class="star filled">★</span>
                 <span class="star">★</span>
-                <span class="star">★</span>
+                <span class="star half">★</span>
               </div>
             </div>
             <div class="rating-item">
               <span class="rating-label">エンゲージメント</span>
               <div class="stars">
                 <span class="star filled">★</span>
-                <span class="star">★</span>
+                <span class="star half">★</span>
                 <span class="star">★</span>
               </div>
             </div>
           </div>
-          <div class="points">0.5/3 points</div>
+          <div class="points">1.5/3 points</div>
         </div>
       </div>
       <div class="description-section">
         <p class="result-description">
-          甲南大学の尾形教授による中小企業オンボーディング実態調査では、「OJTを中心とした現場での指導を実施している」と回答した企業が最も多く、次に多かったのが「特に何もしていない」の回答。「現場での指導」は、「現場に丸投げ」を意味しており、組織として何の施策も講じていないと捉えることができる。<br />
-          OJTといえばそれらしく聞こえるが、実態が変わらないと若手の流出は防げない。目の前の若手社員は社内の同僚と競争しているのではなく、学生時代の同期の成長をSNSを通じて見ているのだ。真摯に組織やオンボーディングづくりに向き合うときが来たのかもしれない。
+          会社のビジョンに共感して入社した仕事ができるビジネスパーソンが多い組織。組織も拡大しているし、事業も上手くいっているため仕事も充実していると感じる社員が多い。
+          しかし、事業が上手くいかず、会社の将来に不安が漂い始めたタイミングが怖い。これまでの組織が幻想のように一気に離職の波が押し寄せる。
+          仕事ができる人にしわ寄せがいき、その人もついに辞めてしまう。縦割りで組織効力感が弱いので、社員がボトムアップ的に動き始めることが大切。
         </p>
         <div class="result-button-container">
           <button class="result-button">オンボーディング<br>をはじめる</button>
@@ -54,9 +55,9 @@
 
 <script>
 export default {
-  name: "ResultR1",
+  name: "ResultR6",
   data: () => ({
-    satisfaction: 3,
+    satisfaction: 1.5,
   }),
 };
 </script>
@@ -167,6 +168,20 @@ export default {
 
 .star.filled {
   color: #ffcc00;
+}
+
+.star.half {
+  color: #ffcc00;
+  position: relative;
+}
+
+.star.half::after {
+  content: "★";
+  color: #ccc;
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  width: 50%;
 }
 
 .points {

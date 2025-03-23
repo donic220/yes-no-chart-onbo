@@ -1,11 +1,11 @@
 <template>
   <div class="result">
-    <h1 class="result-title">OJTという名の現場任せ組織</h1>
+    <h1 class="result-title">令和のゆるい組織</h1>
     <div class="result-content">
       <div class="image-section">
         <img
-          src="@/images/results/r2.png"
-          alt="OJTという名の現場任せ組織"
+          src="@/images/results/r3.png"
+          alt="令和のゆるい組織"
           class="result-image"
         />
         <div class="ratings-container">
@@ -41,8 +41,7 @@
       </div>
       <div class="description-section">
         <p class="result-description">
-          甲南大学の尾形教授による中小企業オンボーディング実態調査では、「OJTを中心とした現場での指導を実施している」と回答した企業が最も多く、次に多かったのが「特に何もしていない」の回答。「現場での指導」は、「現場に丸投げ」を意味しており、組織として何の施策も講じていないと捉えることができる。<br />
-          OJTといえばそれらしく聞こえるが、実態が変わらないと若手の流出は防げない。目の前の若手社員は社内の同僚と競争しているのではなく、学生時代の同期の成長をSNSを通じて見ているのだ。真摯に組織やオンボーディングづくりに向き合うときが来たのかもしれない。
+          ゆるい組織とは職場の人間関係は問題ないが、仕事の基準が低かったり、KPIが達成されていなくても達成されていなくても誰も何も言わないような組織。むしろ若手社員に対して指摘することを恐れており、上司も率先して部下とコミュニケーションを取ることは少ないため、意識のある若手社員は成長実感がなく辞めてしまう。職場で心理的安全性という言葉が独り歩きしている可能性も高い。心理的安全性とは「組織の中で自分の考えや気持ちを誰に対してでも安心して発言できる状態」のことであり、健全な対立が生まれている組織である。事業のミッションやKGIを再度みんなで見直し、ミッションに対して仕事をする必要がある。
         </p>
         <div class="result-button-container">
           <button class="result-button">オンボーディング<br>をはじめる</button>
@@ -54,9 +53,9 @@
 
 <script>
 export default {
-  name: "ResultR1",
+  name: "ResultR3",
   data: () => ({
-    satisfaction: 3,
+    satisfaction: 0.5,
   }),
 };
 </script>

@@ -1,11 +1,11 @@
 <template>
   <div class="result">
-    <h1 class="result-title">OJTという名の現場任せ組織</h1>
+    <h1 class="result-title">方針のない優しい迷走組織</h1>
     <div class="result-content">
       <div class="image-section">
         <img
-          src="@/images/results/r2.png"
-          alt="OJTという名の現場任せ組織"
+          src="@/images/results/r8.png"
+          alt="方針のない優しい迷走組織"
           class="result-image"
         />
         <div class="ratings-container">
@@ -23,7 +23,7 @@
               <span class="rating-label">早期戦力化</span>
               <div class="stars">
                 <span class="star filled">★</span>
-                <span class="star">★</span>
+                <span class="star half">★</span>
                 <span class="star">★</span>
               </div>
             </div>
@@ -31,18 +31,18 @@
               <span class="rating-label">エンゲージメント</span>
               <div class="stars">
                 <span class="star filled">★</span>
-                <span class="star">★</span>
+                <span class="star half">★</span>
                 <span class="star">★</span>
               </div>
             </div>
           </div>
-          <div class="points">0.5/3 points</div>
+          <div class="points">1.5/3 points</div>
         </div>
       </div>
       <div class="description-section">
         <p class="result-description">
-          甲南大学の尾形教授による中小企業オンボーディング実態調査では、「OJTを中心とした現場での指導を実施している」と回答した企業が最も多く、次に多かったのが「特に何もしていない」の回答。「現場での指導」は、「現場に丸投げ」を意味しており、組織として何の施策も講じていないと捉えることができる。<br />
-          OJTといえばそれらしく聞こえるが、実態が変わらないと若手の流出は防げない。目の前の若手社員は社内の同僚と競争しているのではなく、学生時代の同期の成長をSNSを通じて見ているのだ。真摯に組織やオンボーディングづくりに向き合うときが来たのかもしれない。
+          メンバー同士の仲は良いし、仕事についても聞いたら教えてくれる。だが、この組織はどこに向かっているのか分からないという漠然とした不安が漂う。意識のある若手社員は大きな不満はないが、キャリア自立できない不安から転職してしまう。残るのは居心地が良いから働き続けている優しい社員。優しいと言うよりむしろ、何も考えていないのかもしれない、、？
+          改めて自分たちのミッションに立ち返ることや、日々の仕事への向き合い方をオフサイトミーティングなどで考えることが良いかもしれない。
         </p>
         <div class="result-button-container">
           <button class="result-button">オンボーディング<br>をはじめる</button>
@@ -54,9 +54,9 @@
 
 <script>
 export default {
-  name: "ResultR1",
+  name: "ResultR8",
   data: () => ({
-    satisfaction: 3,
+    satisfaction: 1.5,
   }),
 };
 </script>
@@ -167,6 +167,20 @@ export default {
 
 .star.filled {
   color: #ffcc00;
+}
+
+.star.half {
+  color: #ffcc00;
+  position: relative;
+}
+
+.star.half::after {
+  content: "★";
+  color: #ccc;
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  width: 50%;
 }
 
 .points {
