@@ -8,48 +8,43 @@
           alt="理想のしなやかな組織"
           class="result-image"
         />
-        <div class="ratings-container">
-          <h3 class="ratings-title">オンボーディングレベル</h3>
-          <div class="rating-groups">
-            <div class="rating-item">
-              <span class="rating-label">ウェルカム</span>
-              <div class="stars">
-                <span class="star filled">★</span>
-                <!-- <span class="star half">★</span> -->
-                <!-- <span class="star">★</span> -->
-              </div>
-            </div>
-            <div class="rating-item">
-              <span class="rating-label">早期戦力化</span>
-              <div class="stars">
-                <span class="star filled">★</span>
-                <!-- <span class="star partial" style="--fill-percent: 66%">★</span> -->
-                <!-- <span class="star half">★</span> -->
-                <!-- <span class="star">★</span> -->
-              </div>
-            </div>
-            <div class="rating-item">
-              <span class="rating-label">エンゲージメント</span>
-              <div class="stars">
-                <span class="star filled">★</span>
-              </div>
-            </div>
-          </div>
-          <div class="points">3/3 points</div>
-        </div>
       </div>
       <div class="description-section">
         <p class="result-description">
-          息を吸うように組織で成果を出そうとする企業。オンボーディングという言葉が浸透する前から、新入社員フォローに取り組んでいる状態。
-          社員一人ひとりが自律しており、キャリアビジョンも持っているが、この組織が好きだから働いているという社員が多い。最近の研究でもキャリア自律している社員の方がその組織で働く満足度が高いという結果も出ている。
-          各施策の点と点をつなぎオンボーディングとしての成果を最大化しましょう。
-          さらなる飛躍につなげるために、工数削減と効果測定に取り組むと尚良いでしょう。
+          息を吸うように組織で成果を出そうとする企業。<br>オンボーディングという言葉が浸透する前から、新入社員フォローに取り組んでいる状態。<br>
+          社員一人ひとりが自律しており、キャリアビジョンも持っているが、この組織が好きだから働いているという社員が多い。最近の研究でもキャリア自律している社員の方がその組織で働く満足度が高いという結果も出ている。<br>
+          各施策の点と点をつなぎオンボーディングとしての成果を最大化しましょう。<br>
+          さらなる飛躍につなげるために、工数削減と効果測定に取り組むと尚良いでしょう。<br>
         </p>
-        <div class="result-button-container">
-          <button class="result-button">Omboで取り組む</button>
-        </div>
       </div>
     </div>
+    <div style="display: flex;">
+    <div class="ratings-container">
+      <div class="rating-groups">
+        <div class="ratings-title">オンボーディング<br>レベル</div>
+        <div class="rating-item">
+          <span class="rating-label">ウェルカム</span>
+          <div class="stars">
+            <span class="star filled">★</span>
+          </div>
+        </div>
+        <div class="rating-item">
+          <span class="rating-label">早期戦力化</span>
+          <div class="stars">
+            <span class="star filled">★</span>
+          </div>
+        </div>
+        <div class="rating-item">
+          <span class="rating-label">エンゲージメント</span>
+          <div class="stars">
+            <span class="star filled">★</span>
+          </div>
+        </div>
+        <h3 class="ratings-points">3/3<br>points</h3>
+      </div>
+    </div>
+          <button class="result-button">Omboで取り組む</button>
+  </div>
   </div>
 </template>
 
@@ -67,7 +62,7 @@ export default {
   text-align: center;
   padding: 20px;
   border-radius: 10px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
@@ -88,7 +83,7 @@ export default {
 
 .image-section {
   flex: 1;
-  padding-right: 20px;
+  padding-right: 0px;
   width: 50%;
   max-width: 50%;
   display: flex;
@@ -105,11 +100,11 @@ export default {
 }
 
 .result-image {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   object-fit: contain;
   border-radius: 8px;
-  margin: 50px 0px 0px 0px;
+  margin: 0px 0px 0px 80px;
   display: block;
 }
 
@@ -117,7 +112,7 @@ export default {
   font-size: 1.4em;
   color: black;
   text-align: left;
-  padding: 30px 30px 0 0;
+  padding: 0px 30px 0 0;
   border-radius: 8px;
   line-height: 1.6;
   font-weight: bold;
@@ -128,26 +123,29 @@ export default {
   border-radius: 8px;
   text-align: center;
   margin-top: 10px;
-  width: 100%; /* 幅を100%に設定 */
-  max-width: 500px; /* 最大幅を設定 */
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.ratings-points, 
 .ratings-title {
+  margin-top: 30px;
   font-size: 1.2em;
   color: #fff;
-  margin-bottom: 15px;
 }
 
 .rating-groups {
   display: flex;
-  justify-content: space-between; /* space-aroundからspace-betweenに変更 */
   margin-bottom: 15px;
-  width: 100%; /* 幅を100%に設定 */
+  width: 100%;
 }
 
 .rating-item {
   text-align: center;
-  width: 33.33%;
+  width: 150px;
   box-sizing: border-box;
 }
 
@@ -207,14 +205,7 @@ export default {
   font-weight: bold;
 }
 
-.result-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
 .result-button {
-  padding: 12px 25px;
   font-size: 1.4em;
   color: white;
   background-color: #003366;
@@ -223,8 +214,10 @@ export default {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 80%;
-  max-width: 300px;
+  margin-top: 20px;
+  margin-left: 100px;
+  width: 350px;
+  height: 80px;
 }
 
 .result-button:hover {
@@ -261,7 +254,7 @@ export default {
     gap: 15px;
   }
   .rating-item {
-    width: 100%; /* モバイル表示では幅100% */
+    width: 100%;
     margin-bottom: 10px;
   }
   .satisfaction-rating {
