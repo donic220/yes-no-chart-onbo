@@ -55,6 +55,10 @@
           alt="詳細画像" 
           class="detail-image"
         />
+        <router-link to="/ombo" class="ombo-link">
+          <v-icon icon="mdi-check-circle" class="check-icon"></v-icon>
+          Omboで取り組む
+        </router-link>
       </div>
     </div>
   </div>
@@ -74,6 +78,9 @@ export default {
     },
     hideDetailImage() {
       this.isDetailImageVisible = false;
+    },
+    navigateToOnboarding() {
+      this.$router.push('/onboarding');
     }
   }
 };
@@ -261,5 +268,42 @@ export default {
   max-width: 100%;
   max-height: 80vh;
   display: block;
+  margin-bottom: 40px; /* マージンを増やして重なりのスペースを確保 */
+}
+
+.ombo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -50px auto 25px; /* マイナスマージンで上に移動させる */
+  color: #ffffff;
+  font-size: 1.4em;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  font-weight: 600;
+  background-color: #003366;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.2);
+  max-width: 300px;
+  z-index: 20; /* 画像より上に表示されるようにする */
+}
+
+.check-icon {
+  margin-right: 8px;
+  color: #ffffff; /* 色を変更 */
+  font-size: 1.5em;
+}
+
+.ombo-link:hover {
+  color: #ffffff;
+  background-color: #003366; /* 背景色を変更 */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+}
+
+.ombo-link:hover .check-icon {
+  color: #ffffff;
 }
 </style>
