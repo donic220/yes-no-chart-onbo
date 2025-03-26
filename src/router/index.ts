@@ -17,6 +17,17 @@ const routes: Array<RouteRecordRaw> = [
     name: 'results',
     component: () => import(/* webpackChunkName: "results" */ '../views/ResultsView.vue'),
     props: true
+  },
+  {
+    path: '/image-viewer',
+    name: 'image-viewer',
+    component: () => import('@/components/PngViewer.vue'),
+    props: route => ({ currentImage: route.params.imagePath })
+  },
+  {
+    path: '/ombo',
+    name: 'ombo',
+    component: () => import(/* webpackChunkName: "ombo" */ '../views/OnboardingPage.vue')
   }
 ]
 

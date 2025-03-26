@@ -43,7 +43,7 @@
           <h3 class="ratings-points">3/3<br>points</h3>
         </div>
       </div>
-      <button class="result-button">Omboで取り組む</button>
+      <button class="result-button" @click="navigateToOnboarding">Omboで取り組む</button>
     </div>
   </div>
 </template>
@@ -51,6 +51,11 @@
 <script>
 export default {
   name: "ResultR5",
+  methods: {
+    navigateToOnboarding() {
+      this.$router.push("/ombo");
+    },
+  },
 };
 </script>
 

@@ -44,7 +44,23 @@
           <h3 class="ratings-points">1.5/3<br>points</h3>
         </div>
       </div>
-      <button class="result-button">オンボーディングを<br>はじめる</button>
+      <button class="result-button" @click="showDetailImage">オンボーディングを<br>はじめる</button>
+    </div>
+    
+    <!-- 詳細画像モーダル -->
+    <div v-if="isDetailImageVisible" class="modal-overlay" @click="hideDetailImage">
+      <div class="modal-content" @click.stop>
+        <button class="close-button" @click="hideDetailImage">×</button>
+        <img 
+          src="@/images/results/r8_2.jpg" 
+          alt="詳細画像" 
+          class="detail-image"
+        />
+        <router-link to="/ombo" class="ombo-link">
+          <v-icon icon="mdi-check-circle" class="check-icon"></v-icon>
+          Omboで取り組む
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -52,6 +68,22 @@
 <script>
 export default {
   name: "ResultR8",
+  data() {
+    return {
+      isDetailImageVisible: false
+    };
+  },
+  methods: {
+    showDetailImage() {
+      this.isDetailImageVisible = true;
+    },
+    hideDetailImage() {
+      this.isDetailImageVisible = false;
+    },
+    navigateToOnboarding() {
+      this.$router.push('/onboarding');
+    }
+  }
 };
 </script>
 
@@ -199,4 +231,80 @@ export default {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* モーダルのスタイル */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.detail-image {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin-bottom: 40px; /* マージンを増やして重なりのスペースを確保 */
+}
+
+.ombo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -50px auto 25px; /* マイナスマージンで上に移動させる */
+  color: #ffffff;
+  font-size: 1.4em;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  font-weight: 600;
+  background-color: #003366;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.2);
+  max-width: 300px;
+  z-index: 20; /* 画像より上に表示されるようにする */
+}
+
+.check-icon {
+  margin-right: 8px;
+  color: #ffffff; /* 色を変更 */
+  font-size: 1.5em;
+}
+
+.ombo-link:hover {
+  color: #ffffff;
+  background-color: #003366; /* 背景色を変更 */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+}
+
+.ombo-link:hover .check-icon {
+  color: #ffffff;
+}
 </style>

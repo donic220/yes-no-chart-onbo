@@ -45,7 +45,19 @@
           <h3 class="ratings-points">0/3<br>points</h3>
         </div>
       </div>
-      <button class="result-button">オンボーディングを<br>はじめる</button>
+      <button class="result-button" @click="showDetailImage">オンボーディングを<br>はじめる</button>
+    </div>
+    
+    <!-- 詳細画像モーダル -->
+    <div v-if="isDetailImageVisible" class="modal-overlay" @click="hideDetailImage">
+      <div class="modal-content" @click.stop>
+        <button class="close-button" @click="hideDetailImage">×</button>
+        <img 
+          src="@/images/results/r1_2.jpg" 
+          alt="詳細画像" 
+          class="detail-image"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +65,19 @@
 <script>
 export default {
   name: "ResultR1",
+  data() {
+    return {
+      isDetailImageVisible: false
+    };
+  },
+  methods: {
+    showDetailImage() {
+      this.isDetailImageVisible = true;
+    },
+    hideDetailImage() {
+      this.isDetailImageVisible = false;
+    }
+  }
 };
 </script>
 
@@ -200,4 +225,43 @@ export default {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* モーダルのスタイル */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.detail-image {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+}
 </style>
