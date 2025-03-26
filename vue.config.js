@@ -2,6 +2,10 @@ const { defineConfig } = require('@vue/cli-service');
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  // GitHub Pages用の設定
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/yesno-chart/'
+    : '/',
   chainWebpack: (config) => {
     config.plugin('define').tap((definitions) => {
       Object.assign(definitions[0], {
