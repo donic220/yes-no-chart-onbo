@@ -155,6 +155,25 @@ export default {
   margin: 0 2px;
 }
 
+.star.half {
+  position: relative;
+  display: inline-block;
+  color: #ccc; /* 背景の星の色 */
+}
+
+.star.half::before {
+  content: "★"; /* 星の形 */
+  position: absolute;
+  left: 0;
+  color: #ffcc00; /* 半分の星の色 */
+  width: 100%; /* 半分の幅 */
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  clip-path: inset(0 50% 0 0); /* 左半分だけ表示 */
+}
+
+
 .star.filled {
   color: #ffcc00;
 }

@@ -8,45 +8,42 @@
           alt="組織効力感が強い初期組織"
           class="result-image"
         />
-        <div class="ratings-container">
-          <h3 class="ratings-title">オンボーディングレベル</h3>
-          <div class="rating-groups">
-            <div class="rating-item">
-              <span class="rating-label">ウェルカム</span>
-              <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-            </div>
-            <div class="rating-item">
-              <span class="rating-label">早期戦力化</span>
-              <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-            </div>
-            <div class="rating-item">
-              <span class="rating-label">エンゲージメント</span>
-              <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star half">★</span>
-                <span class="star">★</span>
-              </div>
-            </div>
-          </div>
-          <div class="points">1.5/3 points</div>
-        </div>
       </div>
       <div class="description-section">
         <p class="result-description">
-          「目標は高い、だが自分たちならできる気がする！」スタートアップにある組織状態。オンボーディングはそれほど充実していないが、新入社員も成長マインドセットが高いので、自分でなんとかしようとする。逆に教わるスタンスの人からすると放置されているように感じて、早期離職してしまう。この組織は採用段階でのミスマッチ防止と、組織が拡大したタイミングでのオンボーディング整備への切り替えが重要である。
+          「目標は高い、だが自分たちならできる気がする！」スタートアップにある組織状態。<br>
+          オンボーディングはそれほど充実していないが、新入社員も成長マインドセットが高いので、自分でなんとかしようとする。<br>
+          逆に教わるスタンスの人からすると放置されているように感じて、早期離職してしまう。<br>
+          この組織は採用段階でのミスマッチ防止と、組織が拡大したタイミングでのオンボーディング整備への切り替えが重要である。
         </p>
-        <div class="result-button-container">
-          <button class="result-button">オンボーディング<br>をはじめる</button>
+      </div>
+    </div>
+    <div class="action-container">
+      <div class="ratings-container">
+        <div class="rating-groups">
+          <div class="ratings-title">オンボーディング<br>レベル</div>
+          <div class="rating-item">
+            <span class="rating-label">ウェルカム</span>
+            <div class="stars">
+              <span class="star half">★</span>
+            </div>
+          </div>
+          <div class="rating-item">
+            <span class="rating-label">早期戦力化</span>
+            <div class="stars">
+              <span class="star">★</span>
+            </div>
+          </div>
+          <div class="rating-item">
+            <span class="rating-label">エンゲージメント</span>
+            <div class="stars">
+              <span class="star filled">★</span>
+            </div>
+          </div>
+          <h3 class="ratings-points">1.5/3<br>points</h3>
         </div>
       </div>
+      <button class="result-button">オンボーディングを<br>はじめる</button>
     </div>
   </div>
 </template>
@@ -54,9 +51,6 @@
 <script>
 export default {
   name: "ResultR7",
-  data: () => ({
-    satisfaction: 1.5,
-  }),
 };
 </script>
 
@@ -65,7 +59,6 @@ export default {
   text-align: center;
   padding: 20px;
   border-radius: 10px;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -78,7 +71,6 @@ export default {
 
 .result-content {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -86,39 +78,37 @@ export default {
 
 .image-section {
   flex: 1;
-  padding-right: 20px;
-  width: 50%;
-  max-width: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .description-section {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
   padding-left: 20px;
 }
 
 .result-image {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   object-fit: contain;
   border-radius: 8px;
-  margin: 50px 0px 0px 0px;
-  display: block;
+  margin-left: 80px;
 }
 
 .result-description {
   font-size: 1.4em;
   color: black;
   text-align: left;
-  padding: 30px 30px 0 0;
-  border-radius: 8px;
+  padding-right: 30px;
   line-height: 1.6;
   font-weight: bold;
+}
+
+.action-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .ratings-container {
@@ -128,29 +118,30 @@ export default {
   margin-top: 10px;
 }
 
-.ratings-title {
-  font-size: 1.5em;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
 .rating-groups {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 15px;
-  padding-left: 40px;
+  width: 100%;
+}
+
+.ratings-points, 
+.ratings-title {
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: #fff;
 }
 
 .rating-item {
   text-align: center;
-  padding: 0 15px;
+  width: 150px;
 }
 
 .rating-label {
   display: block;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #fff;
   margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .stars {
@@ -164,38 +155,30 @@ export default {
   margin: 0 2px;
 }
 
+.star.half {
+  position: relative;
+  display: inline-block;
+  color: #ccc; /* 背景の星の色 */
+}
+
+.star.half::before {
+  content: "★"; /* 星の形 */
+  position: absolute;
+  left: 0;
+  color: #ffcc00; /* 半分の星の色 */
+  width: 100%; /* 半分の幅 */
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  clip-path: inset(0 50% 0 0); /* 左半分だけ表示 */
+}
+
+
 .star.filled {
   color: #ffcc00;
 }
 
-.star.half {
-  color: #ffcc00;
-  position: relative;
-}
-
-.star.half::after {
-  content: "★";
-  color: #ccc;
-  position: absolute;
-  left: 50%;
-  overflow: hidden;
-  width: 50%;
-}
-
-.points {
-  font-size: 1.3em;
-  color: #fff;
-  font-weight: bold;
-}
-
-.result-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
 .result-button {
-  padding: 12px 25px;
   font-size: 1.4em;
   color: white;
   background-color: #003366;
@@ -204,8 +187,9 @@ export default {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 80%;
-  max-width: 300px;
+  margin-right: 200px;
+  width: 350px;
+  height: 80px;
 }
 
 .result-button:hover {
@@ -214,35 +198,4 @@ export default {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.satisfaction-rating {
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  border-radius: 8px;
-  width: 60%;
-}
-
-.satisfaction-rating p {
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-  .result-content {
-    flex-direction: column;
-  }
-  .image-section, .description-section {
-    padding: 0;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 100%;
-  }
-  .rating-groups {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .satisfaction-rating {
-    width: 90%;
-  }
-}
 </style>
