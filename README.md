@@ -1,4 +1,4 @@
-# yesno-chart
+# yes-no-chart-onbo
 
 ## Project setup
 ```
