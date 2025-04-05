@@ -477,6 +477,17 @@ export default {
     padding: 15px;
   }
   
+  .ombo-link {
+    font-size: 0.8em; /* フォントサイズを小さく */
+    padding: 8px 15px; /* パディングを小さく */
+    max-width: 200px; /* 最大幅を狭く */
+    margin: -30px auto 15px; /* マージンも調整 */
+  }
+  
+  .check-icon {
+    font-size: 1.2em; /* アイコンも小さく */
+  }
+  
   .sp-only {
     display: inline; /* スマホ表示時にsp-onlyクラスを持つ要素を表示 */
   }
