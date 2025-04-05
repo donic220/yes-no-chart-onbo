@@ -4,8 +4,8 @@
     <p>{{ question }}</p>
     <img :src="imagePath" alt="Question Image" class="question-image" />
       <div class="button-container">
-        <button @click="answer(true)" class="yes-button">はい</button>
-        <button @click="answer(false)" class="no-button">いいえ</button>
+        <v-btn @click="answer(true)" class="yes-button">はい</v-btn>
+        <v-btn @click="answer(false)" class="yes-button">いいえ</v-btn>
       </div>
     </div>
   </div>
@@ -90,13 +90,10 @@ p {
   margin: 10px;
   width: 250px;
   height: 60px;
-  background-color: white; /* ボタンの背景色を白に設定 */
-  color: rgb(74, 71, 71); /* ボタンの文字色を黒に設定 */
+  
+
   border: 2px solid rgb(74, 71, 71); /* ボタンの枠を黒に設定 */
-  border-radius: 5px;
-  cursor: pointer;
   font-size: 20px;
-  transition: background-color 0.3s ease;
 }
 
 .yes-button:hover,
