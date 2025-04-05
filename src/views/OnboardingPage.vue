@@ -29,29 +29,30 @@ export default {
   padding: 20px;
   background-color: #4297b4;
   color: white;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .onboarding-title {
   font-size: 2.5em;
-  margin: 100px 20px;
+  margin: 50px 20px;
 }
 
 .onboarding-content {
   display: flex;
-  flex-direction: row; /* 横並びに変更 */
-  gap: 20px; /* 要素間のスペースを追加 */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-
-.onboarding-image {  
-  float: left;
-  text-align: left;
-  margin-left: 150px;
+.onboarding-image {
   width: 400px;
-  height: 400px;
+  max-width: 100%;
+  height: auto;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -65,16 +66,77 @@ export default {
   border-radius: 8px;
   cursor: pointer;
   padding: 15px 30px;
-  margin-top: 50px;
+  margin-top: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 300px;
-  height: 100px;
+  max-width: 100%;
+  height: auto;
+  min-height: 100px;
 }
 
 .onboarding-button:hover {
   background-color: #00264d;
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 背景画像をコンテナ全体に広げる */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像がコンテナを埋めるように */
+  z-index: 1; /* 背景は一番下のレイヤー */
+}
+
+/* スマホ向けのメディアクエリ */
+@media screen and (max-width: 768px) {
+  .background-image {
+    top: 50px; /* タブレット表示時は少し下げる */
+    object-position: center top; /* 上部を基準に表示 */
+  }
+  
+  .onboarding-title {
+    font-size: 1.8em;
+    margin: 30px 10px;
+  }
+  
+  .onboarding-content {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  
+  .onboarding-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .onboarding-button {
+    font-size: 1.2em;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px auto;
+  }
+}
+
+/* さらに小さい画面向け */
+@media screen and (max-width: 480px) {
+  .background-image {
+    top: 80px; /* スマホ表示時はさらに下げる */
+  }
+  
+  .onboarding-title {
+    font-size: 1.5em;
+    margin: 20px 10px;
+  }
+  
+  .onboarding-button {
+    font-size: 1.1em;
+    padding: 12px 20px;
+  }
 }
 </style>

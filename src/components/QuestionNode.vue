@@ -1,11 +1,13 @@
 <template>
   <div class="question-node">
     <div class="image-container">
-    <p>{{ question }}</p>
-    <img :src="imagePath" alt="Question Image" class="question-image" />
+      <p class="question-text">{{ question }}</p>
+      <div class="image-wrapper">
+        <img :src="imagePath" alt="Question Image" class="question-image" />
+      </div>
       <div class="button-container">
         <v-btn @click="answer(true)" class="yes-button">はい</v-btn>
-        <v-btn @click="answer(false)" class="yes-button">いいえ</v-btn>
+        <v-btn @click="answer(false)" class="no-button">いいえ</v-btn>
       </div>
     </div>
   </div>
@@ -57,6 +59,9 @@ export default defineComponent({
 .question-node {
   text-align: center;
   position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .image-container {
@@ -64,41 +69,110 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px;
+  margin: 20px;
+}
+
+.question-text {
+  font-size: 2.5rem; /* レスポンシブに対応するよう相対単位に変更 */
+  color: rgb(74, 71, 71);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.image-wrapper {
+  width: 100%;
+  max-width: 400px; /* 画像コンテナの最大幅を制限 */
+  height: 400px; /* 高さも固定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* はみ出し部分を隠す */
 }
 
 .question-image {
-  margin: 20px 0 20px 0 ;
-  width: 400px; /* 画像の幅を固定 */
-  height: 400px; /* 画像の高さを固定 */
-  object-fit: contain; /* 画像をコンテナに収める（切り取らない） */
-}
-
-p {
-  font-size: 45px; /* 文字を大きめに設定 */
-  color: rgb(74, 71, 71); /* 文字の色を黒に設定 */
+  max-width: 100%;
+  max-height: 100%; /* 高さも制限 */
+  object-fit: contain; /* アスペクト比を保ったまま収める */
+  margin: 0; /* マージンをリセット */
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  flex-wrap: wrap; /* スマホで折り返し可能に */
+  gap: 40px; /* ボタン間の間隔 */
+  margin-top: 40px;
 }
 
 .yes-button,
 .no-button {
-  margin: 10px;
   width: 250px;
+  max-width: 45%;
   height: 60px;
-  
-
-  border: 2px solid rgb(74, 71, 71); /* ボタンの枠を黒に設定 */
+  border: 2px solid rgb(74, 71, 71);
   font-size: 20px;
 }
 
 .yes-button:hover,
 .no-button:hover {
-  background-color: rgb(160, 156, 156); /* ホバー時の背景色を黒に設定 */
-  color: white; /* ホバー時の文字色を白に設定 */
+  background-color: rgb(160, 156, 156);
+  color: white;
+}
+
+/* タブレット用メディアクエリ */
+@media screen and (max-width: 768px) {
+  .question-text {
+    font-size: 2rem;
+  }
+  
+  .image-wrapper {
+    max-width: 250px;
+    height: 250px;
+  }
+  
+  .yes-button,
+  .no-button {
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+/* スマホ用メディアクエリ */
+@media screen and (max-width: 480px) {
+  .question-node {
+    max-width: 100%;
+  }
+  
+  .image-container {
+    margin: 10px;
+  }
+  
+  .question-text {
+    margin-top: 0rem;
+    font-size: 1.5rem;
+  }
+  
+  .image-wrapper {
+    max-width: 200px;
+    height: 200px;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px; /* ボタン間の間隔 */
+  }
+  
+  .yes-button,
+  .no-button {
+    width: 200px;
+    max-width: 90%;
+    height: 45px;
+    font-size: 16px;
+    margin: 5px 0;
+  }
 }
 </style>
