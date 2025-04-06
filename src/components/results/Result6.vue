@@ -354,7 +354,7 @@ export default {
 @media screen and (max-width: 768px) {
   .result-title {
     font-size: 1.2em; /* タイトルをさらに小さく */
-    margin: 15px 0;
+    margin: 0 0 15px 0;
   }
   
   .result-content {
