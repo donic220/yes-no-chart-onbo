@@ -369,7 +369,7 @@ export default {
   }
   
   .result-image {
-    width: 30%; /* 画像サイズを半分くらいに縮小（元は80%） */
+    width: 24%; /* 画像サイズを半分くらいに縮小（元は80%） */
     height: auto;
     margin-left: 0;
   }
