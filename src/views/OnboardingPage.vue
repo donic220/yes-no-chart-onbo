@@ -117,7 +117,7 @@ export default {
   }
   
   .onboarding-image {
-    width: 90%;
+    width: 50%;
     max-width: 250px;
     margin: 0 auto;
     margin-top: 10px; /* 画像を少し下げる */
