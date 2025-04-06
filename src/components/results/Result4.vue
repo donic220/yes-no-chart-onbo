@@ -9,6 +9,35 @@
           class="result-image"
         />
       </div>
+      
+      <!-- モバイル表示用の評価セクション -->
+      <div class="mobile-ratings-container">
+        <div class="rating-groups">
+          <div class="ratings-title">オンボーディングレベル</div>
+          <div class="ratings-stars">
+            <div class="rating-item">
+              <span class="rating-label">ウェルカム</span>
+              <div class="stars">
+                <span class="star filled">★</span>
+              </div>
+            </div>
+            <div class="rating-item">
+              <span class="rating-label">早期戦力化</span>
+              <div class="stars">
+                <span class="star half">★</span>
+              </div>
+            </div>
+            <div class="rating-item">
+              <span class="rating-label">エンゲージメント</span>
+              <div class="stars">
+                <span class="star half">★</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="ratings-points">1.5/3 points</h3>
+        </div>
+      </div>
+      
       <div class="description-section">
         <p class="result-description">
           組織というよりは単に同じ環境で社員が働いているだけ!?チームの共通のゴールへの認識は薄く、コミュニケーション頻度も低い。<br>
@@ -18,6 +47,7 @@
         </p>
       </div>
     </div>
+    
     <div class="action-container">
       <div class="ratings-container">
         <div class="rating-groups">
@@ -153,6 +183,12 @@ export default {
 .rating-groups {
   display: flex;
   width: 100%;
+}
+
+.ratings-stars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ratings-points, 
@@ -305,5 +341,153 @@ export default {
 
 .ombo-link:hover .check-icon {
   color: #ffffff;
+}
+
+.mobile-ratings-container {
+  display: none; /* PC表示時はモバイル評価セクションを非表示 */
+}
+
+.sp-only {
+  display: none; /* PC表示時はsp-onlyクラスを持つ要素を非表示 */
+}
+
+/* スマホ表示用のレスポンシブデザイン */
+@media screen and (max-width: 768px) {
+  .result-title {
+    font-size: 1.2em; /* タイトルをさらに小さく */
+    margin: 15px 0;
+  }
+  
+  .result-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-section {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .result-image {
+    width: 40%; /* 画像サイズを半分くらいに縮小（元は80%） */
+    height: auto;
+    margin-left: 0;
+  }
+  
+  .description-section {
+    width: 100%;
+    padding-left: 0;
+  }
+  
+  .result-description {
+    font-size: 0.8em; /* 説明文のサイズをPCの半分程度に */
+    padding: 0 15px;
+    text-align: left;
+    line-height: 1.4;
+  }
+  
+  .action-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ratings-container {
+    display: none; /* スマホ表示時に非表示 */
+  }
+  
+  .mobile-ratings-container {
+    display: block; /* スマホ表示時に表示 */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .rating-groups {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  
+  .ratings-stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 320px;
+    margin: 8px auto;
+  }
+  
+  .rating-item {
+    width: 33.33%;
+    min-width: unset;
+    margin: 0;
+    padding: 0 2px;
+    box-sizing: border-box;
+  }
+  
+  .rating-label {
+    font-size: 0.65em; /* ラベルをさらに小さく */
+    white-space: normal;
+    text-overflow: clip;
+    overflow: visible;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0 2px;
+  }
+  
+  .ratings-title br,
+  .ratings-points br {
+    display: none; /* スマホ表示時に改行を非表示 */
+  }
+  
+  .ratings-title {
+    width: 100%;
+    white-space: nowrap; /* 折り返し防止 */
+    font-size: 0.9em; /* 評価タイトルを小さく */
+  }
+  
+  .ratings-points {
+    margin-top: 0px;
+    white-space: nowrap; /* 折り返し防止 */
+    font-size: 0.9em; /* ポイント表示を小さく */
+  }
+  
+  .star {
+    font-size: 1em; /* 星のサイズを小さく (PCの半分程度) */
+  }
+  
+  .result-button {
+    margin-right: 0;
+    width: 60%;
+    max-width: 300px;
+    height: 60px;
+    font-size: 0.8em; /* ボタンテキストを小さく */
+  }
+  
+  .modal-content {
+    padding: 15px;
+  }
+  
+  .ombo-link {
+    font-size: 0.8em; /* フォントサイズを小さく */
+    padding: 8px 15px; /* パディングを小さく */
+    max-width: 200px; /* 最大幅を狭く */
+    margin: -30px auto 15px; /* マージンも調整 */
+  }
+  
+  .check-icon {
+    font-size: 1.2em; /* アイコンも小さく */
+  }
+  
+  .sp-only {
+    display: inline; /* スマホ表示時にsp-onlyクラスを持つ要素を表示 */
+  }
 }
 </style>

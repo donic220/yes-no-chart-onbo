@@ -59,4 +59,27 @@ export default class ResultsView extends Vue {
 .back-link:hover {
   background-color: #00264d;
 }
+
+/* スマホ向け */
+@media screen and (max-width: 780px) {
+  .results-view {
+    padding: 10px;
+  }
+  
+  .error-message {
+    margin: 30px auto;
+    max-width: 90%;
+    padding: 15px;
+  }
+  
+  .error-message h2 {
+    font-size: 1.3em;
+  }
+  
+  .back-link {
+    margin-top: 15px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
 </style>

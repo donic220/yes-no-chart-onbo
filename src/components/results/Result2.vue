@@ -435,7 +435,6 @@ export default {
     text-overflow: clip;
     overflow: visible;
     height: auto;
-    /* min-height: 2.8em; */
     display: flex;
     align-items: center;
     justify-content: center;

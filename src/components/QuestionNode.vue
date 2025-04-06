@@ -147,31 +147,34 @@ export default defineComponent({
   }
   
   .image-container {
-    margin: 10px;
+    margin: 5px;
   }
   
   .question-text {
-    margin-top: 0rem;
-    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem; /* フォントサイズをさらに小さく */
+    line-height: 1.3;
   }
   
   .image-wrapper {
-    max-width: 200px;
-    height: 200px;
+    max-width: 180px; /* 画像サイズをさらに小さく */
+    height: 180px;
   }
   
   .button-container {
     flex-direction: column;
     align-items: center;
-    gap: 0px; /* ボタン間の間隔 */
+    gap: 0px;
+    margin-top: 20px; /* マージンを小さく */
   }
   
   .yes-button,
   .no-button {
-    width: 200px;
-    max-width: 90%;
-    height: 45px;
-    font-size: 16px;
+    width: 160px; /* ボタン幅を小さく */
+    max-width: 80%;
+    height: 40px; /* ボタン高さを小さく */
+    font-size: 14px; /* フォントサイズを小さく */
     margin: 5px 0;
   }
 }

@@ -121,7 +121,7 @@ body {
 }
 
 
-/* さらに小さい画面向け */
+/* スマホ向け */
 @media screen and (max-width: 780px) {
   .content-overlay {
     justify-content: space-between;
@@ -131,28 +131,30 @@ body {
   
   .description-text {
     margin: 0;
-    padding-top: 40px;
-    height: 50%; /* 上半分をテキストに */
+    padding-top: 30px; /* 上部のパディングを減らす */
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   
   .description-text h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 1.6em; /* 見出しのサイズを小さく */
+    margin-bottom: 15px;
   }
   
   .description-text p {
-    font-size: 1.2em;
+    font-size: 1em; /* 段落のサイズを小さく */
+    line-height: 1.5;
   }
   
   .start-button {
-    margin-bottom: 120px; /* ボタンを下側に配置 */
-    height: 80px; /* ボタンの高さを固定 */
-    width: 80%;
-    max-width: 300px;
-    font-size: 1.5em;
+    margin-bottom: 100px; /* ボタンの下マージンを減らす */
+    height: 60px; /* ボタンの高さを小さく */
+    width: 70%; /* 幅も少し狭く */
+    max-width: 250px;
+    font-size: 1.2em; /* ボタン内のテキストも小さく */
+    padding: 8px 20px;
   }
 }
 </style>
