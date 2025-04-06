@@ -47,10 +47,11 @@ export default {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  padding-right: 300px;
 }
 
 .onboarding-image {
-  width: 400px;
+  width: 300px;
   max-width: 100%;
   height: auto;
   object-fit: contain;
@@ -100,8 +101,8 @@ export default {
   }
   
   .onboarding-title {
-    font-size: 1.8em;
-    margin: 30px 10px;
+    font-size: 1.5em; /* 1.8emから1.5emに小さく */
+    margin: 20px 10px; /* マージンも少し小さく */
   }
   
   .onboarding-content {
@@ -110,33 +111,18 @@ export default {
   }
   
   .onboarding-image {
-    width: 100%;
-    max-width: 300px;
+    width: 50%; /* 100%から90%に小さく */
+    max-width: 250px; /* 300pxから250pxに小さく */
     margin: 0 auto;
   }
   
   .onboarding-button {
-    font-size: 1.2em;
-    width: 100%;
-    max-width: 250px;
-    margin: 20px auto;
-  }
-}
-
-/* さらに小さい画面向け */
-@media screen and (max-width: 480px) {
-  .background-image {
-    top: 80px; /* スマホ表示時はさらに下げる */
-  }
-  
-  .onboarding-title {
-    font-size: 1.5em;
-    margin: 20px 10px;
-  }
-  
-  .onboarding-button {
-    font-size: 1.1em;
-    padding: 12px 20px;
+    font-size: 1.1em; /* 1.2emから1.1emに小さく */
+    width: 90%; /* 幅も調整 */
+    max-width: 200px; /* 250pxから200pxに小さく */
+    margin: 15px auto; /* マージンも少し小さく */
+    min-height: 80px; /* 高さも調整 */
+    padding: 10px 20px; /* パディングも調整 */
   }
 }
 </style>
