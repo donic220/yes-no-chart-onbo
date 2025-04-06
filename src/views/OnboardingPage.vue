@@ -93,36 +93,44 @@ export default {
   z-index: 1; /* 背景は一番下のレイヤー */
 }
 
-/* スマホ向けのメディアクエリ */
+/* モバイル端末用メディアクエリ (タブレット・スマホ共通) */
 @media screen and (max-width: 768px) {
+  .onboarding-page {
+    padding-top: 50px; /* 上部に余白を追加して全体を下げる */
+  }
+
   .background-image {
-    top: 50px; /* タブレット表示時は少し下げる */
-    object-position: center top; /* 上部を基準に表示 */
+    top: 50px;
+    object-position: center top;
   }
   
   .onboarding-title {
-    font-size: 1.5em; /* 1.8emから1.5emに小さく */
-    margin: 20px 10px; /* マージンも少し小さく */
+    font-size: 1.5em;
+    margin: 20px 10px;
+    margin-top: 30px; /* タイトルを下に下げる */
   }
   
   .onboarding-content {
     flex-direction: column;
     padding: 0 10px;
+    margin-top: 20px; /* コンテンツ全体も少し下げる */
   }
   
   .onboarding-image {
-    width: 50%; /* 100%から90%に小さく */
-    max-width: 250px; /* 300pxから250pxに小さく */
+    width: 90%;
+    max-width: 250px;
     margin: 0 auto;
+    margin-top: 10px; /* 画像を少し下げる */
   }
   
   .onboarding-button {
-    font-size: 1.1em; /* 1.2emから1.1emに小さく */
-    width: 90%; /* 幅も調整 */
-    max-width: 200px; /* 250pxから200pxに小さく */
-    margin: 15px auto; /* マージンも少し小さく */
-    min-height: 80px; /* 高さも調整 */
-    padding: 10px 20px; /* パディングも調整 */
+    font-size: 1.1em;
+    width: 90%;
+    max-width: 200px;
+    margin: 15px auto;
+    margin-top: 25px; /* ボタンを下げる */
+    min-height: 80px;
+    padding: 10px 20px;
   }
 }
 </style>

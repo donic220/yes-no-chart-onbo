@@ -149,7 +149,7 @@ body {
   }
   
   .start-button {
-    margin-bottom: 100px; /* ボタンの下マージンを減らす */
+    margin-bottom: 150px; /* ボタンの下マージンを減らす */
     height: 60px; /* ボタンの高さを小さく */
     width: 70%; /* 幅も少し狭く */
     max-width: 250px;

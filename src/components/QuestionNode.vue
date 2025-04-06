@@ -73,7 +73,7 @@ export default defineComponent({
 }
 
 .question-text {
-  font-size: 2.5rem; /* レスポンシブに対応するよう相対単位に変更 */
+  font-size: 2.2rem; /* レスポンシブに対応するよう相対単位に変更 */
   color: rgb(74, 71, 71);
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -121,61 +121,46 @@ export default defineComponent({
   color: white;
 }
 
-/* タブレット用メディアクエリ */
+/* モバイル端末用メディアクエリ */
 @media screen and (max-width: 768px) {
-  .question-text {
-    font-size: 2rem;
-  }
-  
-  .image-wrapper {
-    max-width: 250px;
-    height: 250px;
-  }
-  
-  .yes-button,
-  .no-button {
-    width: 180px;
-    height: 50px;
-    font-size: 18px;
-  }
-}
-
-/* スマホ用メディアクエリ */
-@media screen and (max-width: 480px) {
   .question-node {
     max-width: 100%;
+    padding-top: 40px; /* 上部に余白を追加して全体を下げる */
   }
   
   .image-container {
-    margin: 5px;
+    margin: 10px;
+    margin-top: 30px; /* 上部にマージンを追加してさらに下げる */
   }
   
   .question-text {
-    margin-top: 0;
+    margin-top: 1.5rem; /* 上部マージンを増やして下に下げる */
     margin-bottom: 1rem;
-    font-size: 1.2rem; /* フォントサイズをさらに小さく */
+    font-size: 1.5rem;
     line-height: 1.3;
   }
   
   .image-wrapper {
-    max-width: 180px; /* 画像サイズをさらに小さく */
-    height: 180px;
+    max-width: 220px;
+    height: 220px;
+    margin-top: 15px; /* 画像コンテナも少し下に */
   }
   
   .button-container {
-    flex-direction: column;
+    flex-direction: row; /* 縦並びから横並びに変更 */
+    justify-content: center; /* 中央揃えに */
     align-items: center;
-    gap: 0px;
-    margin-top: 20px; /* マージンを小さく */
+    gap: 20px; /* ボタン間の間隔を設定 */
+    margin-top: 35px; /* ボタンコンテナを下に下げる */
   }
   
   .yes-button,
   .no-button {
-    width: 160px; /* ボタン幅を小さく */
-    max-width: 80%;
-    height: 40px; /* ボタン高さを小さく */
-    font-size: 14px; /* フォントサイズを小さく */
-    margin: 5px 0;
+    width: 130px; /* 横並びにするため幅を少し小さく */
+    max-width: 45%; /* 比率で幅を設定 */
+    height: 45px;
+    font-size: 16px;
+    margin: 0; /* マージンをリセット */
   }
 }
 </style>
