@@ -146,6 +146,7 @@ body {
   .description-text p {
     font-size: 1em; /* 段落のサイズを小さく */
     line-height: 1.5;
+    text-align: left;
   }
   
   .start-button {
